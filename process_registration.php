@@ -9,46 +9,68 @@ $email = $_POST['email'];
 $pass = $_POST['pass'];
 $cpass = $_POST['cpass'];
 
+$countU = strlen($uname);
+$countP = strlen($pass);
+
 // STEP 2.1: PREPARE VALIDATION FOR EMPTY FIELDS 
-if($fname == "") echo "First name is empty!<br>"; 
-if($lname == "") echo "Last name is empty!<br>";
+if($fname == "") echo "<p style='color:red'>First name is empty!</p>"; 
+
+if($lname == "") echo "<p style='color:red'>Last name is empty!</p>";
+
 if($uname == "") {
-	echo "Username is empty!<br>"; 
-} elseif (strlen($uname) >= 5 && strlen($uname) <= 8) {
-	echo "Username should be 5 to 8 characters.<br>";
+	echo "<p style='color:red'>Username is empty!</p>"; 
+} elseif ($countU >= 5 && $countU <= 8) {
+	echo $uname;
+} else {
+	echo "<p style='color:red'>Username should be 5 to 8 characters.</p>";
 }
 
+//FILTER_VALIDATE_EMAIL --> as long as there is 1 character, @ symbol and domain (.com)
 if($email == "") {
-	echo "Email is empty!<br>";
-} elseif (!strpos($email, '@') && !strpos($email, 'com')) {
-	echo "Please use a valid email address.<br>"
+	echo"<p style='color:red'>Email is empty!</p>";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) { 
+	echo "Invalid email address";
 }
 
-	
+
 if($pass == "") {
-	echo "Password is empty!<br>";
-} elseif (strlen($pass) < 8 ) {
-	echo "Password should be at least 8 characters.<br>";
+	echo "<p style='color:red'>Password is empty!</p>";
+} elseif ($countP < 8 ) {
+	echo "<p style='color:red'>Password should be at least 8 characters.</p>";
 }
 
 if($cpass == "") {
-	echo "Please confirm your password.<br>";
+	echo "<p style='color:red'>Please confirm your password.</p>";
 } elseif ($cpass !== $pass) {
-	echo "Passwords do not match.<br>";
+	echo "<p style='color:red'>Passwords do not match.</p>";
 }
 
 
 // STEP 2.2: PREPAVE VALIDATINO FOR LENGTH
-// if(strlen($uname) >= 5 && strlen($uname) <= 8) echo "Username should be 5 to 8 characters.<br>";
-// if(strlen($pass) < 8 ) echo "Password should be at least 8 characters.<br>";
+// if($countU >= 5 && $countU <= 8) {
+// 	echo $uname;
+// } elseif {
+// 	echo "<p style='color:red'>Username should be 5 to 8 characters.</p>"; // WHITE HAT since it is focused on showing the corrrect
+// }
 
-// STEP 2.4: CHECK IF EMAIL IS VALID -- SIR WILL TEACH A BETTER TECHNIQUE
-// if(!strpos($email, '@') && !strpos($email, 'com')) echo "Please use a valid email address.<br>"
+
+// if($countP < 8 ) echo "Password should be at least 8 characters.<br>";
 
 
 // STEP 2.4: PREPAVE VALIDATION FOR PASS AND CPASS
 // if($cpass !== $pass) echo "Passwords do not match.<br>";
 
 
+
+// STEP 3: FINISH
+if ($fname == "" || $lname == "" || $uname == "" || $email == "" || $pass == "" || $cpass == "") {
+	echo "<p style='color:red'>All fields are required!</p>";
+}
+else {
+	echo $fname . "<br>";
+	echo $lname . "<br>";
+	echo $uname . "<br>";
+	echo $email . "<br>";
+}
 
 ?>
