@@ -15,6 +15,16 @@
 	          		// echo "You have no permission to go to these files!";
 	          		header ("Location: login.php");
 	          	}
+
+	          	/* SIR VAN'S SHORTER VERSION:
+
+	          	if(!isset($_SESSION['user'])) {
+	          		header("Location: login.php");
+	          	}else {
+					echo "WELCOME HOME!"; 
+	          	}
+	          
+	          	*/
           	?>
           
 
