@@ -8,14 +8,15 @@
         <div class="col-lg-12">
           
 
-        	<?php 
-	        	if(isset($_SESSION['user'])) { 
-	          		echo "Welcome " . $_SESSION['user'] ." to the homepage!";
-	          	}else {
-	          		// echo "You have no permission to go to these files!";
-	          		header ("Location: login.php");
-	          	}
-          	?>
+        
+      	<?php 
+        	if(isset($_SESSION['user'])) { 
+          		echo "<h1>Dashboard</h1>";
+          	}else {
+          		// echo "You have no permission to go to these files!";
+          		header ("Location: login.php");
+          	}
+      	?>
           
 
         </div>

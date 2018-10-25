@@ -14,10 +14,18 @@
 	          $pass = $_POST['pass'];
 
 	          if(authenticate($uname, $pass)) { // IF TRUE (authenticate($user,$pass) == true)
+              session_start(); // ALL webpages that needs a session must have this at the top
+              $_SESSION['user'] = "admin"; // creation of user variable with the value- admin
+
 	          	header ("Location: home.php"); // If the credential is right, you will be redirected to home page
 	          }else {
 	          	echo "Wrong credentials!";
 	          }
+
+
+            
+
+
 
           ?>
 
