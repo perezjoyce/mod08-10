@@ -2,9 +2,15 @@ $(document).ready(()=> {
 
 // ================= ERROR MESSAGE WHEN INPUT FIELDS ARE LEFT BLANK ===============
 
-    $("#fname").blur(()=>{ 
+    $("#btnRegister").click(()=>{ 
 
         let fname = $("#fname").val();
+        let lname = $("#lname").val();
+        let uname = $("#uname").val();
+        let email = $("#email").val();
+        let cpass = $("#cpass").val();
+        let pass = $("#pass").val();
+
 
         $.ajax({
             "url" : "process_fname.php",
@@ -19,12 +25,6 @@ $(document).ready(()=> {
             }
         });  
         
-    });  
-
-
-    $("#lname").blur(()=>{
-
-        let lname = $("#lname").val();
 
         $.ajax({
             "url" : "process_lname.php",
@@ -38,13 +38,8 @@ $(document).ready(()=> {
                 }
             }
         });  
-    }); 
     
-
-    $("#uname").blur(()=>{
-
-        let uname = $("#uname").val();
-
+       
         $.ajax({
             "url" : "process_uname.php",
             "data" : {"uname" : uname},
@@ -59,12 +54,7 @@ $(document).ready(()=> {
                 }
             }
         });  
-    });
 
-
-    $("#email").blur(()=>{
-
-        let email = $("#email").val();
 
         $.ajax({
             "url" : "process_email.php",
@@ -80,11 +70,7 @@ $(document).ready(()=> {
                 }
             }
         });  
-    }); 
-
-    $("#pass").blur(()=>{
-
-        let pass = $("#pass").val();
+   
 
         $.ajax({
             "url" : "process_pass.php",
@@ -100,12 +86,7 @@ $(document).ready(()=> {
                 }
             }
         });  
-    }); 
-
-    $("#cpass").blur(()=>{
-
-        let cpass = $("#cpass").val();
-        let pass = $("#pass").val();
+ 
 
         $.ajax({
             "url" : "process_cpass.php",
@@ -121,11 +102,8 @@ $(document).ready(()=> {
                 }
             }
         });  
-    }); 
 
-        
-
-
+    });
 
 
 });

@@ -48,7 +48,7 @@
 					</div>
 					<div class="card-footer">
 
-							<input type="submit" value="SUBMIT" class="btn btn-block btn-outline-success">
+							<input type="submit" value="REGISTER" class="btn btn-block btn-outline-success" id="btnRegister">
 					</div>
 					</div>
 
