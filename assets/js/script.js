@@ -14,7 +14,7 @@ $(document).ready(()=> {
                 if(data) {
                     $("#error_fname").html("First Name is Required!");
                 } else {
-                    $("#error_fname").val("");
+                    $("#error_fname").empty("");
                 }
             }
         });  
