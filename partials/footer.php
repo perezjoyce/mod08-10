@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light bottom justify-content-center mt-5">
   <a>Footer</a>
 
 </nav>
@@ -6,7 +6,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
