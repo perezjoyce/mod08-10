@@ -1,5 +1,39 @@
 $(document).ready(()=> {
 
+// LOGIN 
+    $("#btnLogIn").click(()=> {
+        let uname = $("#uname").val();
+        let pass = $("#pass").val();
+
+        $.ajax({
+            "url" : "process_login.php",
+            "data" : {"uname" : uname, "pass" : pass},
+            "type" : "POST",
+            "success" :(data)=> {
+                if(data === true) {
+                    $("#error_uname").html("Username is required!");
+                    $("#error_pass").html("Password is required!")
+                } else if (data === false) {
+                    $("#error_uname").html("Username doesn't exist.");
+                    $("#error_pass").html("Password is wrong.")
+                } else {
+                    $("#error_uname").html("");
+                    $("#error_pass").html("")
+
+                    //THIS PART IS NOT WORKING
+                    // <?php
+                    // session_start(); // ALL webpages that needs a session must have this at the top
+                    // $_SESSION["user"] = "admin"; // creation of user variable with the value- admin
+	          	    // header ("Location: home.php"); // If the credential is right, you will be redirected to home page
+                    // ?>
+                }
+            }
+        });
+
+    })
+
+
+// REGISTRATION    
 // ================= ERROR MESSAGE WHEN INPUT FIELDS ARE LEFT BLANK ===============
 
     $("#btnRegister").click(()=>{ 
@@ -10,7 +44,8 @@ $(document).ready(()=> {
         let email = $("#email").val();
         let cpass = $("#cpass").val();
         let pass = $("#pass").val();
-
+ 
+        
 
         $.ajax({
             "url" : "process_fname.php",

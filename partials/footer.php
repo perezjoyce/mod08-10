@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-light bottom justify-content-center mt-5">
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom justify-content-center mt-5">
   <a>Footer</a>
 
 </nav>
